@@ -1,0 +1,420 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  /* background: url(/assets/musiclove.jpg) no-repeat;*/
+  background: var(--radial);
+  background-size: cover;
+  background-position: center;
+}
+
+:root {
+  --radial: linear-gradient(
+    45deg,
+    rgba(243, 9, 243, 0.158),
+    rgba(250, 45, 45, 0.144),
+    rgba(133, 133, 245, 0.219),
+    rgba(255, 255, 255, 0.5),
+    rgba(250, 45, 45, 0.178),
+    rgba(243, 9, 243, 0.226),
+    rgba(133, 133, 245, 0.315)
+  );
+  --radial-2: linear-gradient(
+    -45deg,
+    rgba(243, 9, 243, 0.178),
+    rgba(250, 45, 45, 0.144),
+    rgba(133, 133, 245, 0.178),
+    rgba(255, 255, 255, 0.5),
+    rgba(250, 45, 45, 0.178),
+    rgba(243, 9, 243, 0.226),
+    rgba(133, 133, 245, 0.315)
+  );
+}
+
+@font-face {
+  src: url(../Righteous/Righteous-Regular.ttf);
+  font-family: righteous;
+}
+@font-face {
+  src: url(../Open_Sans_Condensed/OpenSansCondensed-Light.ttf);
+  font-family: openSans;
+}
+
+@font-face {
+  src: url(../Great_Vibes/GreatVibes-Regular.ttf);
+  font-family: vibes;
+}
+
+.display {
+  display: none;
+}
+
+.main-container {
+  position: relative;
+  width: 425px;
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.main-container .main-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.main-content::before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.548);
+  top: 0;
+  left: 0;
+  content: "";
+  z-index: 3;
+  display: none;
+  transition: all 0.5s;
+}
+
+/* DISPLAY SCREEN */
+.date {
+  width: 100%;
+  height: 7rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.date #date {
+  color: #fff;
+  padding: 1rem 5px;
+  font-size: 10px;
+  font-family: openSans, sans-serif;
+  width: 40%;
+}
+
+.date h3:nth-child(2) {
+  font-family: righteous, cursive;
+  padding: 0;
+  display: inline-block;
+  height: fit-content;
+  color: rgba(238, 238, 238, 0.849);
+
+  font-size: 17px;
+  text-align: right;
+  background: var(--radial);
+  margin: 5px;
+  border-radius: 5px;
+  letter-spacing: 0.6px;
+  text-shadow: 1px 1px 1px rgba(17, 17, 17, 0.432);
+}
+
+.main-container .bg-images {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.main-container .bg-images img {
+  position: relative;
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.main-container .bg-images:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.548);
+  z-index: 1;
+}
+
+.main-container .bg-images .background {
+  display: block;
+}
+
+.main-container .display-screen {
+  width: 100%;
+  height: 60rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.main-container .display-screen i.fa-quote-left {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: calc(0vw + 2rem);
+  font-size: 40px;
+  font-style: oblique;
+  color: #fff;
+}
+
+.main-container .display-screen i.fa-quote-right {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: calc(0vw + 2rem);
+  font-size: 40px;
+  font-style: oblique;
+  color: #fff;
+}
+
+.main-container .display-screen #screen {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.main-container .display-screen #screen .show {
+  display: block;
+}
+
+.main-container .display-screen .quote-wrapper {
+  display: none;
+  color: #fff;
+}
+
+.main-container .display-screen .quote-wrapper .quote {
+  font-size: 23px;
+  font-family: openSans, sans-serif;
+  letter-spacing: 1px;
+  word-spacing: 1.5px;
+  font-stretch: expanded;
+  font-weight: 300;
+  padding: 5rem 5rem 2rem;
+  text-align: center;
+}
+
+.main-container .display-screen .quote-wrapper .writer {
+  padding: 0 2rem;
+  font-size: 30px;
+  letter-spacing: 5px;
+  word-spacing: 3px;
+  font-family: vibes, cursive;
+  font-weight: 600;
+  text-align: center;
+}
+
+.main-container .display-screen .quote-wrapper .writer i {
+  color: rgb(240, 208, 26);
+}
+
+.main-container .buttons-wrapper {
+  padding: 4rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.main-container .buttons-wrapper button {
+  cursor: pointer;
+  padding: 2rem 3rem;
+  font-size: 2.5rem;
+  width: 30%;
+  border: none;
+  color: White;
+  border-radius: 30px;
+  outline: none;
+  background: rgba(0, 0, 0, 0.748);
+  position: relative;
+}
+
+.main-container .buttons-wrapper button::before {
+  content: "";
+  width: calc(100% + 2rem);
+  border-radius: 30px;
+  height: calc(100% + 2rem);
+  background: var(--radial);
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  z-index: -1;
+}
+
+.main-container .buttons-wrapper button:nth-child(2)::before {
+  content: "";
+  width: calc(100% + 2rem);
+  border-radius: 30px;
+  height: calc(100% + 2rem);
+  background: var(--radial-2);
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  z-index: -1;
+}
+/* XXXXXXX DISPLAY SCREEN  XXXXXXX */
+/* Navber */
+
+.main-container .navbar {
+  position: absolute;
+  top: calc(100vh - 7rem);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.822);
+  z-index: 4;
+  transition: top 700ms;
+}
+
+.main-container .navbar .content #toggle-btn {
+  width: 100%;
+  height: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 15px 15px rgba(10, 5, 5, 0.685);
+  border-bottom: 0.2px solid #222;
+}
+
+.main-container .navbar .content #toggle-btn button {
+  cursor: pointer;
+  width: 10rem;
+  height: 1rem;
+  border-radius: 3rem;
+  background: rgba(119, 119, 119, 0.87);
+  border: none;
+  outline: none;
+}
+
+.main-container .navbar .body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.main-container .navbar .body .text {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container .navbar .body .text h4 {
+  width: 100%;
+  text-align: center;
+  font-size: 27px;
+  font-family: righteous, monospace;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px #111111;
+  padding: 1rem 0 1.5rem;
+}
+
+.main-container .navbar .body .text p {
+  font-size: 30px;
+  font-family: vibes, cursive;
+  letter-spacing: 1.3px;
+  text-align: center;
+  padding: 0 0 0 2rem;
+}
+
+.main-container .navbar .body .socials {
+  width: 50%;
+  height: 100%;
+  padding: 3rem 0 5rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.main-container .navbar .body .socials a {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
+  background: skyblue;
+}
+
+.main-container .navbar .body .socials a img {
+  width: 3rem;
+  height: 3rem;
+  object-position: center;
+  object-fit: contain;
+}
+
+.main-container .navbar .body .socials a:nth-child(1) {
+  background: blue;
+}
+
+.main-container .navbar .body .socials a:nth-child(3) {
+  background: white;
+}
+
+.main-container .navbar .body .socials a:nth-child(1) img {
+  width: 100%;
+  height: 3rem;
+  object-fit: contain;
+}
+.main-container .navbar .body .socials a:nth-child(3) img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+}
+
+.main-container .navbar .copyright {
+  color: #777;
+  font-size: 18px;
+  font-family: openSans, sans-serif;
+}
+
+/**** TOGGLE */
+.toggle .navbar {
+  top: calc(100vh - 50rem);
+}
+
+.toggle .main-content::before {
+  display: block;
+}
+/* *******XX Navber XX******************/
+
+/*********** Media QUERY ******/
+
+@media (max-width: 425px) {
+  .main-container {
+    width: 100%;
+    height: 100vh;
+  }
+  .date {
+    height: 4vh;
+    margin-bottom: 2rem;
+  }
+  .main-container .display-screen {
+    height: 70vh;
+  }
+  .main-container .display-screen i.fa-quote-left,
+  .main-container .display-screen i.fa-quote-right {
+    font-size: 35px;
+  }
+  .main-container .display-screen .quote-wrapper .quote {
+    font-size: 20px;
+  }
+  .main-container .buttons-wrapper button {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+  }
+}

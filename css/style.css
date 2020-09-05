@@ -10,8 +10,7 @@ html {
 body {
   /* background: url(/assets/musiclove.jpg) no-repeat;*/
   background: var(--radial);
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
 }
 
 :root {
@@ -393,6 +392,107 @@ body {
 /* *******XX Navber XX******************/
 
 /*********** Media QUERY ******/
+@media (max-width: 2560px) {
+  .main-container {
+    width: 600px;
+  }
+
+  .date {
+    height: 7vh;
+  }
+  .main-container .display-screen {
+    height: 68vh;
+  }
+  .main-container .buttons-wrapper button {
+    margin: 3rem 0 0 0;
+    padding: 3rem 2rem;
+  }
+  .toggle .navbar {
+    top: calc(100vh - 40rem);
+  }
+}
+
+@media (max-width: 1440px) {
+  .main-container .display-screen {
+    height: 66vh;
+  }
+  .main-container .buttons-wrapper button {
+    margin: -1rem 0 0 0;
+    padding: 2rem 2rem;
+  }
+  .toggle .navbar {
+    top: calc(100vh - 40rem);
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-container .display-screen {
+    height: 65vh;
+  }
+  .main-container .buttons-wrapper button {
+    margin: 2rem 0 0 0;
+    padding: 2rem;
+  }
+  .toggle .navbar {
+    top: calc(100vh - 40rem);
+  }
+}
+
+@media (max-width: 700px) {
+  .main-container {
+    width: 500px;
+    height: 100vh;
+    margin: 0 auto;
+  }
+  .main-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: var(--radial);
+  }
+  .main-container .display-screen {
+    height: 65vh;
+  }
+  .main-container .buttons-wrapper button {
+    margin: 2.5rem 0 0 0;
+    padding: 1.5rem 2rem;
+  }
+  .toggle .navbar {
+    top: calc(100vh - 40rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .main-container {
+    width: 500px;
+    height: 100vh;
+    margin: 0 auto;
+  }
+  .main-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: var(--radial);
+  }
+  .main-container .buttons-wrapper button {
+    margin-top: 3rem;
+    padding: 1.5rem 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .main-container {
+    width: 100vw;
+    height: 100vh;
+  }
+  .main-container .display-screen {
+    height: 65vh;
+  }
+}
 
 @media (max-width: 425px) {
   .main-container {
@@ -404,7 +504,7 @@ body {
     margin-bottom: 2rem;
   }
   .main-container .display-screen {
-    height: 70vh;
+    height: 65vh;
   }
   .main-container .display-screen i.fa-quote-left,
   .main-container .display-screen i.fa-quote-right {
@@ -416,5 +516,14 @@ body {
   .main-container .buttons-wrapper button {
     margin-top: 1rem;
     padding: 1rem 2rem;
+  }
+  .toggle .navbar {
+    top: calc(100vh - 37rem);
+  }
+  .main-container .navbar .body .socials {
+    padding: 3rem 0;
+  }
+  .main-container .navbar .body {
+    padding: 1rem 0;
   }
 }

@@ -78,7 +78,7 @@ previousBtn.addEventListener("click", () => {
 
 var date = document.querySelector("#date");
 
-date.innerHTML = Date();
+date.innerHTML = new Date();
 
 // NAVBAR
 var main = document.querySelector("#main");

@@ -9,7 +9,7 @@ html {
 
 body {
   /* background: url(/assets/musiclove.jpg) no-repeat;*/
-  background: var(--radial);
+  background: url(../17994.png);
   overflow: hidden;
 }
 
@@ -66,16 +66,17 @@ body {
   position: relative;
   height: 100%;
   width: 100%;
+  background: rgba(0, 0, 0, 0.548);
 }
 
-.main-content::before {
+.main-content::after {
+  content: "";
   width: 100%;
   height: 100%;
   position: absolute;
-  background: rgba(0, 0, 0, 0.548);
+  background: red;
   top: 0;
   left: 0;
-  content: "";
   z-index: 3;
   display: none;
   transition: all 0.5s;
@@ -85,32 +86,21 @@ body {
 .date {
   width: 100%;
   height: 7rem;
-  display: flex;
-  justify-content: space-between;
 }
 
-.date #date {
-  color: #fff;
-  padding: 1rem 5px;
-  font-size: 10px;
-  font-family: openSans, sans-serif;
-  width: 40%;
-}
-
-.date h3:nth-child(2) {
+.date h3 {
   font-family: righteous, cursive;
   padding: 0;
   display: inline-block;
   height: fit-content;
   color: rgba(238, 238, 238, 0.849);
-
   font-size: 17px;
   text-align: right;
-  background: var(--radial);
   margin: 5px;
   border-radius: 5px;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.9px;
   text-shadow: 1px 1px 1px rgba(17, 17, 17, 0.432);
+  float: right;
 }
 
 .main-container .bg-images {
@@ -119,7 +109,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: 0;
 }
 
 .main-container .bg-images img {
@@ -138,10 +128,14 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.548);
+  background-color: rgba(0, 0, 0, 0.648);
   z-index: 1;
+  transition: all 0.3s;
 }
 
+.main-container.toggle .bg-images:before {
+  background-color: rgba(0, 0, 0, 0.798);
+}
 .main-container .bg-images .background {
   display: block;
 }
@@ -218,10 +212,6 @@ body {
   text-align: center;
 }
 
-.main-container .display-screen .quote-wrapper .writer i {
-  color: rgb(240, 208, 26);
-}
-
 .main-container .buttons-wrapper {
   padding: 4rem 0;
   width: 100%;
@@ -234,37 +224,14 @@ body {
   padding: 2rem 3rem;
   font-size: 2.5rem;
   width: 30%;
-  border: none;
+  border: 1px solid white;
   color: White;
   border-radius: 30px;
   outline: none;
-  background: rgba(0, 0, 0, 0.748);
+  background: transparent;
   position: relative;
 }
 
-.main-container .buttons-wrapper button::before {
-  content: "";
-  width: calc(100% + 2rem);
-  border-radius: 30px;
-  height: calc(100% + 2rem);
-  background: var(--radial);
-  position: absolute;
-  top: -1rem;
-  left: -1rem;
-  z-index: -1;
-}
-
-.main-container .buttons-wrapper button:nth-child(2)::before {
-  content: "";
-  width: calc(100% + 2rem);
-  border-radius: 30px;
-  height: calc(100% + 2rem);
-  background: var(--radial-2);
-  position: absolute;
-  top: -1rem;
-  left: -1rem;
-  z-index: -1;
-}
 /* XXXXXXX DISPLAY SCREEN  XXXXXXX */
 /* Navber */
 
@@ -339,40 +306,11 @@ body {
 }
 
 .main-container .navbar .body .socials a {
-  width: 5rem;
-  height: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border-radius: 50%;
-  background: skyblue;
 }
 
-.main-container .navbar .body .socials a img {
-  width: 3rem;
-  height: 3rem;
-  object-position: center;
-  object-fit: contain;
-}
-
-.main-container .navbar .body .socials a:nth-child(1) {
-  background: blue;
-}
-
-.main-container .navbar .body .socials a:nth-child(3) {
-  background: white;
-}
-
-.main-container .navbar .body .socials a:nth-child(1) img {
-  width: 100%;
-  height: 3rem;
-  object-fit: contain;
-}
-.main-container .navbar .body .socials a:nth-child(3) img {
-  width: 5rem;
-  height: 5rem;
-  object-fit: cover;
+.navbar i {
+  font-size: 29px;
+  color: white;
 }
 
 .main-container .navbar .copyright {
